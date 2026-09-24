@@ -129,6 +129,13 @@
 
     .portrait { position: relative; max-width: 360px; width: calc(100% - 18px); margin: 0 18px 0 0; justify-self: center; }
     @media (min-width: 860px) { .portrait { justify-self: end; } }
+    @media (max-width: 859px) {
+      .hero { gap: 32px; }
+      .portrait { display: flex; align-items: center; gap: 20px; max-width: none; width: auto; margin: 0; justify-self: start; }
+      .portrait .frame { flex: none; width: 88px; }
+      .portrait .frame::before { inset: 6px -6px -6px 6px; }
+      .portrait figcaption { margin-top: 0; }
+    }
     .portrait .frame { position: relative; }
     .portrait .frame::before { content: ""; position: absolute; inset: 18px -18px -18px 18px; border: 1px solid var(--brass); }
     .portrait img { position: relative; display: block; width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; filter: saturate(.9); }
@@ -230,7 +237,7 @@
           <li><a href="#approach">Approach</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#record">Track record</a></li>
-          <li><a class="btn btn-brass" href="#contact">Get in touch</a></li>
+          <li><a class="btn btn-brass" href="https://www.linkedin.com/in/edmundcyh/" target="_blank" rel="noopener">Get in touch</a></li>
         </ul>
       </nav>
 
@@ -240,13 +247,13 @@
           <h1>Supply chains that are <em>visible, simple</em> and built to perform.</h1>
           <p>I help retailers and distributors <strong>raise on-shelf availability</strong>, <strong>simplify replenishment</strong> and <strong>put data and AI to work</strong> in their operations. My advice draws on more than twelve years of hands-on work at Tesco, Watsons, eco-shop and Keppel Logistics.</p>
           <div class="actions">
-            <a class="btn btn-brass" href="mailto:edmundcyh@gmail.com?subject=Supply%20chain%20enquiry">
-              Start a conversation
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-            </a>
-            <a class="btn btn-line" href="https://www.linkedin.com/in/edmundcyh/" rel="noopener">
+            <a class="btn btn-brass" href="https://www.linkedin.com/in/edmundcyh/" target="_blank" rel="noopener">
               <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
-              LinkedIn profile
+              Start a conversation
+            </a>
+            <a class="btn btn-line" href="#services">
+              See how I can help
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg>
             </a>
           </div>
         </div>
@@ -434,14 +441,13 @@
       <div>
         <span class="label">Contact</span>
         <h2 id="contact-h">Let's discuss your supply chain.</h2>
-        <p>Whether you want a second opinion on inventory and replenishment, help with a data or AI initiative, or simply to compare notes, I'd be glad to hear from you.</p>
+        <p>Whether you want a second opinion on inventory and replenishment, help with a data or AI initiative, or simply to compare notes, I'd be glad to hear from you. The best way to reach me is a message on LinkedIn.</p>
         <div class="actions">
-          <a class="btn btn-brass" href="mailto:edmundcyh@gmail.com?subject=Supply%20chain%20enquiry">Start a conversation</a>
+          <a class="btn btn-brass" href="https://www.linkedin.com/in/edmundcyh/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg> Message me on LinkedIn</a>
         </div>
       </div>
       <dl>
-        <div><dt>Email</dt><dd><a href="mailto:edmundcyh@gmail.com">edmundcyh@gmail.com</a></dd></div>
-        <div><dt>LinkedIn</dt><dd><a href="https://www.linkedin.com/in/edmundcyh/" rel="noopener">linkedin.com/in/edmundcyh</a></dd></div>
+        <div><dt>LinkedIn</dt><dd><a href="https://www.linkedin.com/in/edmundcyh/" target="_blank" rel="noopener">linkedin.com/in/edmundcyh</a></dd></div>
         <div><dt>Location</dt><dd>Kuala Lumpur, Malaysia</dd></div>
       </dl>
     </div>

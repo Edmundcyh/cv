@@ -40,5 +40,4 @@ GitHub redirects the apex (`edmundcyh.com`) to `www.edmundcyh.com` automatically
 
 - **SSL/TLS → Overview → Encryption mode: Full (strict).** Do not use *Flexible*, because it causes an infinite redirect loop with GitHub's HTTPS enforcement.
 - **SSL/TLS → Edge Certificates:** turn on *Always Use HTTPS*.
-- **Scrape Shield → Email Address Obfuscation:** on. This hides the email address on the page from spam bots.
 - **Caching:** the defaults are fine. After an update, *Caching → Purge Everything* makes the change appear immediately.
