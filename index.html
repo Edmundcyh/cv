@@ -3,16 +3,15 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Edmund Chong | Supply Chain Manager</title>
-  <meta name="description" content="Edmund Chong is a supply chain manager in Kuala Lumpur, Malaysia, with 12+ years in retail and logistics. He works on inventory, replenishment and applying AI to supply chains.">
+  <title>Edmund Chong | Supply Chain &amp; AI Advisory</title>
+  <meta name="description" content="Edmund Chong is a retail supply chain practitioner in Kuala Lumpur with 12+ years at Tesco, Watsons, eco-shop and Keppel Logistics. He advises on inventory, replenishment, forecasting and applying AI to supply chains.">
   <meta name="author" content="Edmund Chong">
   <link rel="canonical" href="https://www.edmundcyh.com/">
-  <meta name="theme-color" content="#f6f4ef" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#14171a" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#0f1d2e">
 
   <meta property="og:type" content="profile">
-  <meta property="og:title" content="Edmund Chong | Supply Chain Manager">
-  <meta property="og:description" content="Retail supply chain manager in Kuala Lumpur who applies AI to inventory, replenishment and supply chain visibility.">
+  <meta property="og:title" content="Edmund Chong | Supply Chain &amp; AI Advisory">
+  <meta property="og:description" content="Retail supply chain expertise in inventory, replenishment and forecasting, with data and AI applied to each. 12+ years at Tesco, Watsons, eco-shop and Keppel Logistics.">
   <meta property="og:url" content="https://www.edmundcyh.com/">
   <meta property="og:image" content="https://www.edmundcyh.com/images/edmundchong.jpg">
   <meta name="twitter:card" content="summary">
@@ -20,7 +19,7 @@
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
   <script type="application/ld+json">
   {
@@ -31,6 +30,7 @@
     "image": "https://www.edmundcyh.com/images/edmundchong.jpg",
     "jobTitle": "Supply Chain Manager",
     "worksFor": { "@type": "Organization", "name": "eco-shop Malaysia" },
+    "knowsAbout": ["Supply chain management", "Inventory management", "Store replenishment", "Demand forecasting", "Artificial intelligence", "Python"],
     "address": { "@type": "PostalAddress", "addressLocality": "Kuala Lumpur", "addressCountry": "MY" },
     "alumniOf": [
       { "@type": "CollegeOrUniversity", "name": "Malaysia Institute for Supply Chain Innovation (MISI)" },
@@ -42,342 +42,417 @@
 
   <style>
     :root {
-      --bg: #f6f4ef;
+      --bg: #fbfaf7;
       --surface: #ffffff;
-      --ink: #1b1f23;
-      --muted: #5c646c;
-      --line: #e3dfd6;
-      --accent: #0f6b5c;
-      --accent-ink: #ffffff;
-      --accent-soft: #e2efeb;
-      --radius: 14px;
-      --shadow: 0 1px 2px rgba(20, 24, 28, .04), 0 8px 24px rgba(20, 24, 28, .06);
-      --serif: "Fraunces", Georgia, "Times New Roman", serif;
+      --alt: #f2efe8;
+      --ink: #152232;
+      --body: #3a4654;
+      --muted: #6b7682;
+      --line: #e2ddd2;
+      --navy: #0f1d2e;
+      --navy-2: #172a40;
+      --on-navy: #eef1f5;
+      --on-navy-muted: #a9b4c2;
+      --brass: #a8834a;
+      --brass-soft: #c9a86f;
+      --serif: "Source Serif 4", Georgia, "Times New Roman", serif;
       --sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
     }
     @media (prefers-color-scheme: dark) {
       :root:not([data-theme="light"]) {
-        --bg: #14171a;
-        --surface: #1c2024;
-        --ink: #e9e7e2;
-        --muted: #9aa3ab;
-        --line: #2c3237;
-        --accent: #5cc4ae;
-        --accent-ink: #0d1f1b;
-        --accent-soft: #1d302c;
-        --shadow: none;
+        --bg: #0c1622;
+        --surface: #122033;
+        --alt: #0f1b2b;
+        --ink: #eef1f5;
+        --body: #c5cdd7;
+        --muted: #8e9aa8;
+        --line: #22344a;
+        --navy: #081019;
+        --navy-2: #0f1d2e;
+        --brass: #c9a86f;
       }
     }
     :root[data-theme="dark"] {
-      --bg: #14171a;
-      --surface: #1c2024;
-      --ink: #e9e7e2;
-      --muted: #9aa3ab;
-      --line: #2c3237;
-      --accent: #5cc4ae;
-      --accent-ink: #0d1f1b;
-      --accent-soft: #1d302c;
-      --shadow: none;
+      --bg: #0c1622;
+      --surface: #122033;
+      --alt: #0f1b2b;
+      --ink: #eef1f5;
+      --body: #c5cdd7;
+      --muted: #8e9aa8;
+      --line: #22344a;
+      --navy: #081019;
+      --navy-2: #0f1d2e;
+      --brass: #c9a86f;
     }
 
     *, *::before, *::after { box-sizing: border-box; }
     html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      background: var(--bg);
-      color: var(--ink);
-      font: 400 17px/1.65 var(--sans);
-      -webkit-font-smoothing: antialiased;
-    }
-    a { color: var(--accent); text-underline-offset: 3px; }
-    a:hover { text-decoration-thickness: 2px; }
-    :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
-    h1, h2, h3 { font-family: var(--serif); font-weight: 600; line-height: 1.15; margin: 0; letter-spacing: -.01em; }
+    body { margin: 0; background: var(--bg); color: var(--body); font: 400 17px/1.7 var(--sans); -webkit-font-smoothing: antialiased; }
+    a { color: inherit; }
+    :focus-visible { outline: 2px solid var(--brass); outline-offset: 3px; }
+    h1, h2, h3 { font-family: var(--serif); font-weight: 600; line-height: 1.15; margin: 0; color: var(--ink); letter-spacing: -.005em; }
     p { margin: 0 0 1em; }
-    ul { margin: 0; padding: 0; }
+    ul, ol { margin: 0; padding: 0; list-style: none; }
 
-    .wrap { max-width: 960px; margin: 0 auto; padding: 0 16px; }
-    @media (min-width: 640px) { .wrap { padding: 0 32px; } }
+    .wrap { max-width: 1120px; margin: 0 auto; padding: 0 16px; }
+    @media (min-width: 640px) { .wrap { padding: 0 40px; } }
 
-    /* Nav */
-    .nav { display: flex; align-items: center; justify-content: space-between; padding: 20px 0; gap: 16px; }
-    .brand { font-family: var(--serif); font-weight: 600; font-size: 1.15rem; color: var(--ink); text-decoration: none; }
-    .nav ul { list-style: none; display: flex; gap: 20px; font-size: .95rem; }
-    .nav a:not(.brand) { color: var(--muted); text-decoration: none; }
-    .nav a:not(.brand):hover { color: var(--ink); }
-    @media (max-width: 560px) { .nav ul { display: none; } }
+    .label { display: block; font-size: .78rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--brass); margin-bottom: 14px; }
 
-    /* Hero */
-    .hero { display: grid; gap: 32px; align-items: center; padding: 40px 0 56px; }
-    @media (min-width: 760px) { .hero { grid-template-columns: 1fr 260px; padding: 72px 0 88px; } }
-    .eyebrow { display: inline-flex; align-items: center; gap: 8px; font-size: .85rem; font-weight: 500; color: var(--accent); background: var(--accent-soft); padding: 6px 12px; border-radius: 999px; margin-bottom: 20px; }
-    .eyebrow::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: currentColor; }
-    .hero h1 { font-size: clamp(2.4rem, 6vw, 3.6rem); margin-bottom: 16px; }
-    .hero .lede { font-size: clamp(1.1rem, 2.2vw, 1.3rem); color: var(--muted); max-width: 34em; margin-bottom: 28px; }
-    .hero .lede strong { color: var(--ink); font-weight: 500; }
-    .photo { width: 180px; aspect-ratio: 1; border-radius: 50%; overflow: hidden; border: 4px solid var(--surface); box-shadow: var(--shadow); order: -1; }
-    @media (min-width: 760px) { .photo { width: 260px; order: 0; justify-self: end; } }
-    .photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .btn { display: inline-flex; align-items: center; gap: 10px; padding: 13px 24px; font: 500 .95rem/1 var(--sans); text-decoration: none; border: 1px solid transparent; border-radius: 2px; transition: background-color .15s ease, color .15s ease, border-color .15s ease; }
+    .btn svg { width: 16px; height: 16px; flex: none; }
+    .btn-brass { background: var(--brass); color: #10151b; }
+    .btn-brass:hover { background: var(--brass-soft); }
+    .btn-line { border-color: rgba(238, 241, 245, .35); color: var(--on-navy); }
+    .btn-line:hover { border-color: var(--on-navy); }
 
-    .actions { display: flex; flex-wrap: wrap; gap: 12px; }
-    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 11px 20px; border-radius: 999px; font-weight: 500; font-size: .98rem; text-decoration: none; border: 1px solid var(--line); color: var(--ink); background: var(--surface); transition: transform .15s ease, border-color .15s ease; }
-    .btn:hover { transform: translateY(-1px); border-color: var(--muted); }
-    .btn.primary { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
-    .btn svg { width: 18px; height: 18px; flex: none; }
+    /* Header + hero (navy band) */
+    .top { background: var(--navy); color: var(--on-navy); }
+    .nav { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 22px 0; border-bottom: 1px solid rgba(255, 255, 255, .08); }
+    .brand { text-decoration: none; line-height: 1.2; }
+    .brand b { display: block; font-family: var(--serif); font-size: 1.2rem; font-weight: 600; color: #fff; }
+    .brand span { font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; color: var(--on-navy-muted); }
+    .nav ul { display: flex; align-items: center; gap: 28px; font-size: .92rem; }
+    .nav ul a { text-decoration: none; color: var(--on-navy-muted); }
+    .nav ul a:hover { color: #fff; }
+    .nav ul a.btn { padding: 10px 18px; color: #10151b; }
+    @media (max-width: 820px) { .nav ul li:not(:last-child) { display: none; } }
 
-    /* Stats */
-    .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
-    .stat { background: var(--surface); padding: 22px 24px; }
-    .stat b { display: block; font-family: var(--serif); font-size: 1.9rem; font-weight: 600; line-height: 1.1; color: var(--accent); }
-    .stat span { font-size: .92rem; color: var(--muted); }
+    .hero { display: grid; gap: 40px; padding: 56px 0 64px; align-items: center; }
+    @media (min-width: 860px) { .hero { grid-template-columns: 1.35fr 1fr; gap: 64px; padding: 88px 0 96px; } }
+    .hero .label { color: var(--brass-soft); }
+    .hero h1 { color: #fff; font-size: clamp(2.2rem, 5vw, 3.4rem); margin-bottom: 22px; }
+    .hero h1 em { font-style: italic; color: var(--brass-soft); font-weight: 500; }
+    .hero p { color: var(--on-navy-muted); font-size: clamp(1.05rem, 1.8vw, 1.2rem); max-width: 36em; margin-bottom: 32px; }
+    .hero p strong { color: var(--on-navy); font-weight: 500; }
+    .hero .actions { display: flex; flex-wrap: wrap; gap: 12px; }
+
+    .portrait { position: relative; max-width: 360px; width: calc(100% - 18px); margin: 0 18px 0 0; justify-self: center; }
+    @media (min-width: 860px) { .portrait { justify-self: end; } }
+    .portrait .frame { position: relative; }
+    .portrait .frame::before { content: ""; position: absolute; inset: 18px -18px -18px 18px; border: 1px solid var(--brass); }
+    .portrait img { position: relative; display: block; width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; filter: saturate(.9); }
+    .portrait figcaption { position: relative; margin-top: 36px; font-size: .88rem; color: var(--on-navy-muted); }
+    .portrait figcaption b { color: var(--on-navy); font-weight: 500; }
+
+    .facts { display: grid; grid-template-columns: repeat(2, 1fr); border-top: 1px solid rgba(255, 255, 255, .1); }
+    @media (min-width: 860px) { .facts { grid-template-columns: repeat(4, 1fr); } }
+    .fact { padding: 26px 20px 30px 0; }
+    .fact + .fact { padding-left: 20px; border-left: 1px solid rgba(255, 255, 255, .1); }
+    @media (max-width: 859px) { .fact:nth-child(3) { border-left: 0; padding-left: 0; } .fact:nth-child(n+3) { border-top: 1px solid rgba(255, 255, 255, .1); } }
+    .fact b { display: block; font-family: var(--serif); font-size: 1.9rem; font-weight: 600; color: #fff; line-height: 1.1; margin-bottom: 6px; }
+    .fact span { font-size: .86rem; color: var(--on-navy-muted); line-height: 1.45; display: block; }
+
+    /* Credentials strip */
+    .creds { border-bottom: 1px solid var(--line); background: var(--surface); }
+    .creds .wrap { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 40px; padding-top: 26px; padding-bottom: 26px; }
+    .creds small { font-size: .74rem; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+    .creds ul { display: flex; flex-wrap: wrap; gap: 10px 36px; }
+    .creds li { font-family: var(--serif); font-size: 1.2rem; font-weight: 600; color: var(--ink); opacity: .75; }
 
     /* Sections */
-    section.block { padding: 72px 0 0; }
-    .section-head { display: flex; align-items: baseline; gap: 16px; margin-bottom: 28px; }
-    .section-head h2 { font-size: 1.9rem; }
-    .section-head::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+    section.sec { padding: 88px 0; }
+    section.sec.alt { background: var(--alt); }
+    .sec-head { max-width: 680px; margin-bottom: 48px; }
+    .sec-head h2 { font-size: clamp(1.8rem, 3.6vw, 2.5rem); margin-bottom: 14px; }
+    .sec-head p { color: var(--muted); font-size: 1.05rem; margin: 0; }
 
-    .about { display: grid; gap: 32px; }
-    @media (min-width: 760px) { .about { grid-template-columns: 1.6fr 1fr; } }
-    .about p { color: var(--ink); }
-    .focus { list-style: none; display: grid; gap: 12px; }
-    .focus li { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; font-size: .96rem; }
-    .focus li b { display: block; font-weight: 600; margin-bottom: 2px; }
-    .focus li span { color: var(--muted); }
+    /* Services */
+    .services { display: grid; gap: 1px; background: var(--line); border: 1px solid var(--line); }
+    @media (min-width: 700px) { .services { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 1000px) { .services { grid-template-columns: repeat(3, 1fr); } }
+    .service { background: var(--surface); padding: 32px 28px 34px; }
+    .service .num { font-family: var(--serif); font-size: .95rem; color: var(--brass); font-weight: 600; display: block; margin-bottom: 18px; }
+    .service h3 { font-size: 1.3rem; margin-bottom: 10px; }
+    .service p { font-size: .96rem; margin: 0 0 14px; }
+    .service small { display: block; font-size: .82rem; color: var(--muted); padding-top: 14px; border-top: 1px solid var(--line); }
 
-    /* Timeline */
-    .timeline { list-style: none; position: relative; }
-    .timeline::before { content: ""; position: absolute; left: 7px; top: 8px; bottom: 8px; width: 2px; background: var(--line); }
-    .role { position: relative; padding: 0 0 36px 36px; }
-    .role:last-child { padding-bottom: 0; }
-    .role::before { content: ""; position: absolute; left: 0; top: 7px; width: 16px; height: 16px; border-radius: 50%; background: var(--bg); border: 3px solid var(--accent); }
-    .role-head { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 16px; }
-    .role h3 { font-size: 1.3rem; }
-    .role .when { color: var(--muted); font-size: .92rem; white-space: nowrap; }
-    .role .org { color: var(--accent); font-weight: 500; margin: 2px 0 10px; }
-    .role ul { list-style: none; display: grid; gap: 6px; }
-    .role li { position: relative; padding-left: 18px; color: var(--muted); }
-    .role li::before { content: ""; position: absolute; left: 0; top: .72em; width: 8px; height: 2px; background: var(--line); }
-    .sub { margin-top: 14px; display: grid; gap: 14px; }
-    .sub div { border-left: 2px solid var(--line); padding-left: 14px; }
-    .sub b { font-weight: 600; }
-    .sub .when { display: block; }
+    /* Approach */
+    .approach { display: grid; gap: 32px; counter-reset: step; }
+    @media (min-width: 760px) { .approach { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 1000px) { .approach { grid-template-columns: repeat(4, 1fr); } }
+    .step { border-top: 2px solid var(--ink); padding-top: 22px; }
+    .step::before { counter-increment: step; content: "0" counter(step); font-family: var(--serif); font-size: 2.2rem; font-weight: 600; color: var(--brass); display: block; line-height: 1; margin-bottom: 14px; }
+    .step h3 { font-size: 1.25rem; margin-bottom: 8px; }
+    .step p { font-size: .96rem; margin: 0; }
 
-    /* Cards */
-    .grid-2 { display: grid; gap: 20px; }
-    @media (min-width: 700px) { .grid-2 { grid-template-columns: 1fr 1fr; } }
-    .card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; box-shadow: var(--shadow); }
-    .card h3 { font-size: 1.2rem; margin-bottom: 16px; }
-    .edu { list-style: none; display: grid; gap: 16px; }
-    .edu b { display: block; font-weight: 600; }
-    .edu span { color: var(--muted); font-size: .95rem; }
-    .tags { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; }
-    .tags li { font-size: .9rem; padding: 6px 12px; border-radius: 999px; background: var(--accent-soft); color: var(--ink); }
-    .card + .card, .card .gap { margin-top: 20px; }
-    .muted { color: var(--muted); }
+    /* About */
+    .about { display: grid; gap: 48px; }
+    @media (min-width: 900px) { .about { grid-template-columns: 1.2fr 1fr; gap: 72px; } }
+    .about .lead { font-family: var(--serif); font-size: clamp(1.3rem, 2.4vw, 1.6rem); line-height: 1.45; color: var(--ink); margin-bottom: 24px; }
+    .pull { border-left: 3px solid var(--brass); padding: 4px 0 4px 22px; margin: 28px 0 0; font-style: italic; color: var(--ink); }
+
+    /* Track record */
+    .record li { display: grid; gap: 4px 32px; padding: 26px 0; border-top: 1px solid var(--line); }
+    .record li:last-child { border-bottom: 1px solid var(--line); }
+    @media (min-width: 760px) { .record li { grid-template-columns: 170px 1fr; } }
+    .record .when { font-size: .88rem; color: var(--muted); font-variant-numeric: tabular-nums; padding-top: 3px; }
+    .record h3 { font-size: 1.2rem; }
+    .record .org { font-size: .92rem; color: var(--brass); font-weight: 500; margin: 2px 0 8px; }
+    .record p { font-size: .96rem; margin: 0; }
+
+    .quals { display: grid; gap: 24px; margin-top: 56px; }
+    @media (min-width: 760px) { .quals { grid-template-columns: repeat(2, 1fr); } }
+    .qual { background: var(--surface); border: 1px solid var(--line); padding: 28px; }
+    .qual h3 { font-size: 1.15rem; margin-bottom: 18px; }
+    .qual li { padding: 10px 0; border-top: 1px solid var(--line); font-size: .95rem; }
+    .qual li:first-child { border-top: 0; padding-top: 0; }
+    .qual li b { display: block; color: var(--ink); font-weight: 600; }
+    .qual li span { color: var(--muted); font-size: .9rem; }
 
     /* Contact */
-    .contact { margin: 72px 0 0; background: var(--accent); color: var(--accent-ink); border-radius: calc(var(--radius) + 6px); padding: 40px 28px; text-align: center; }
-    .contact h2 { font-size: clamp(1.7rem, 4vw, 2.2rem); margin-bottom: 10px; }
-    .contact p { opacity: .85; max-width: 32em; margin: 0 auto 24px; }
-    .contact .actions { justify-content: center; }
-    .contact .btn { background: var(--accent-ink); color: var(--accent); border-color: transparent; }
-    .contact .btn.ghost { background: transparent; color: var(--accent-ink); border-color: currentColor; }
+    .contact { background: var(--navy); color: var(--on-navy); padding: 88px 0; }
+    .contact .grid { display: grid; gap: 40px; align-items: end; }
+    @media (min-width: 860px) { .contact .grid { grid-template-columns: 1.4fr 1fr; } }
+    .contact .label { color: var(--brass-soft); }
+    .contact h2 { color: #fff; font-size: clamp(1.9rem, 4vw, 2.8rem); margin-bottom: 16px; }
+    .contact p { color: var(--on-navy-muted); max-width: 34em; margin: 0; }
+    .contact dl { margin: 0; display: grid; gap: 18px; }
+    .contact dt { font-size: .74rem; letter-spacing: .14em; text-transform: uppercase; color: var(--on-navy-muted); margin-bottom: 4px; }
+    .contact dd { margin: 0; font-family: var(--serif); font-size: 1.2rem; color: #fff; }
+    .contact dd a { text-decoration: none; border-bottom: 1px solid var(--brass); }
+    .contact dd a:hover { color: var(--brass-soft); }
+    .contact .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
 
-    footer.site { padding: 32px 0 40px; color: var(--muted); font-size: .88rem; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; }
+    footer.site { background: var(--navy); color: var(--on-navy-muted); font-size: .84rem; }
+    footer.site .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; padding-top: 24px; padding-bottom: 32px; border-top: 1px solid rgba(255, 255, 255, .08); }
 
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      .btn { transition: none; }
-    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .btn { transition: none; } }
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <nav class="nav" aria-label="Main">
-      <a class="brand" href="#top">Edmund Chong</a>
-      <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
+  <div class="top">
+    <div class="wrap">
+      <nav class="nav" aria-label="Main">
+        <a class="brand" href="#top"><b>Edmund Chong</b><span>Supply Chain &amp; AI</span></a>
+        <ul>
+          <li><a href="#services">Expertise</a></li>
+          <li><a href="#approach">Approach</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#record">Track record</a></li>
+          <li><a class="btn btn-brass" href="#contact">Get in touch</a></li>
+        </ul>
+      </nav>
 
-    <main id="top">
-      <header class="hero">
+      <header class="hero" id="top">
         <div>
-          <span class="eyebrow">Supply Chain Manager at eco-shop Malaysia</span>
-          <h1>Hi, I'm Edmund.</h1>
-          <p class="lede">I work on retail supply chains, making them <strong>visible, simple and fast</strong>, and I've started bringing <strong>AI and Python</strong> into that work. I'm based in Kuala Lumpur, Malaysia.</p>
+          <span class="label">Retail supply chain · Inventory · AI</span>
+          <h1>Supply chains that are <em>visible, simple</em> and built to perform.</h1>
+          <p>I help retailers and distributors <strong>raise on-shelf availability</strong>, <strong>simplify replenishment</strong> and <strong>put data and AI to work</strong> in their operations. My advice draws on more than twelve years of hands-on work at Tesco, Watsons, eco-shop and Keppel Logistics.</p>
           <div class="actions">
-            <a class="btn primary" href="https://www.linkedin.com/in/edmundcyh/" rel="noopener">
-              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
-              Connect on LinkedIn
+            <a class="btn btn-brass" href="mailto:edmundcyh@gmail.com?subject=Supply%20chain%20enquiry">
+              Start a conversation
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
             </a>
-            <a class="btn" href="mailto:edmundcyh@gmail.com">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
-              Email me
+            <a class="btn btn-line" href="https://www.linkedin.com/in/edmundcyh/" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+              LinkedIn profile
             </a>
           </div>
         </div>
-        <div class="photo">
-          <img src="images/edmundchong.jpg" alt="Portrait of Edmund Chong" width="600" height="600">
-        </div>
+        <figure class="portrait">
+          <div class="frame"><img src="images/edmundchong.jpg" alt="Portrait of Edmund Chong" width="600" height="600"></div>
+          <figcaption><b>Edmund Chong</b>, M.Sc. SCM · Kuala Lumpur, Malaysia</figcaption>
+        </figure>
       </header>
 
-      <div class="stats" role="list">
-        <div class="stat" role="listitem"><b>12+ years</b><span>in logistics &amp; retail supply chain</span></div>
-        <div class="stat" role="listitem"><b>4 companies</b><span>eco-shop, Watsons, Tesco, Keppel Logistics</span></div>
-        <div class="stat" role="listitem"><b>M.Sc. SCM</b><span>MISI, part of the MIT Global SCALE Network</span></div>
-        <div class="stat" role="listitem"><b>AI / ML</b><span>Certificate with UT Austin via Great Learning</span></div>
+      <div class="facts">
+        <div class="fact"><b>12+</b><span>years in logistics and retail supply chain</span></div>
+        <div class="fact"><b>4</b><span>sectors: grocery, health &amp; beauty, value retail, 3PL</span></div>
+        <div class="fact"><b>M.Sc.</b><span>Supply Chain Management, MIT Global SCALE Network</span></div>
+        <div class="fact"><b>AI / ML</b><span>Certified with The University of Texas at Austin</span></div>
       </div>
+    </div>
+  </div>
 
-      <section class="block" id="about" aria-labelledby="about-h">
-        <div class="section-head"><h2 id="about-h">About</h2></div>
-        <div class="about">
-          <div>
-            <p>As supply chain manager at eco-shop Malaysia, I look for ways to get clearer visibility across the supply chain. I also work on simplifying store replenishment, growing same-store sales, giving colleagues better tools, and working closely with stakeholders across the business.</p>
-            <p>Before eco-shop, I spent over a decade at Watsons, Tesco and Keppel Logistics. In those roles I covered stock purchasing, ordering and promotion forecasting, distribution-centre contracts, and trucking operations.</p>
-            <p>I hold a master's in supply chain management from the Malaysia Institute for Supply Chain Innovation (MISI), which is affiliated with MIT. I also have a certificate in AI and machine learning. I want to combine good supply chain practice with AI so the business, its customers and the environment all benefit.</p>
-          </div>
-          <ul class="focus" aria-label="Focus areas">
-            <li><b>Inventory management</b><span>Keeping stock availability high while spending less on inventory</span></li>
-            <li><b>Supply &amp; replenishment</b><span>Store ordering, purchasing and promotion allocation</span></li>
-            <li><b>Continuous improvement</b><span>Questioning how things are done and using data to improve them</span></li>
-          </ul>
+  <div class="creds" aria-label="Organisations">
+    <div class="wrap">
+      <small>Experience at</small>
+      <ul>
+        <li>Tesco</li>
+        <li>Watsons</li>
+        <li>eco-shop</li>
+        <li>Keppel Logistics</li>
+      </ul>
+    </div>
+  </div>
+
+  <main>
+    <section class="sec" id="services" aria-labelledby="services-h">
+      <div class="wrap">
+        <div class="sec-head">
+          <span class="label">Expertise</span>
+          <h2 id="services-h">Where I can help</h2>
+          <p>Practical work across the retail supply chain, from how much stock to hold to how it reaches the shelf.</p>
         </div>
-      </section>
+        <div class="services">
+          <article class="service">
+            <span class="num">01</span>
+            <h3>Inventory &amp; availability</h3>
+            <p>Hold the right stock in the right place, so shelves stay full without tying up working capital.</p>
+            <small>Stock policy · on-shelf availability · working capital</small>
+          </article>
+          <article class="service">
+            <span class="num">02</span>
+            <h3>Store replenishment</h3>
+            <p>Make store ordering, purchasing and allocation simpler and more consistent, and less manual.</p>
+            <small>Ordering rules · allocation · end-to-end process</small>
+          </article>
+          <article class="service">
+            <span class="num">03</span>
+            <h3>Demand &amp; promotion planning</h3>
+            <p>Forecast baseline and promotional demand so the business and its suppliers plan against the same numbers.</p>
+            <small>Promotion forecasting · commercial alignment</small>
+          </article>
+          <article class="service">
+            <span class="num">04</span>
+            <h3>Supply chain visibility</h3>
+            <p>Build the data and reports that show what is happening end to end, and where problems are starting.</p>
+            <small>KPIs · dashboards · exception management</small>
+          </article>
+          <article class="service">
+            <span class="num">05</span>
+            <h3>AI &amp; automation</h3>
+            <p>Use Python and machine learning on the supply chain problems where they make the most difference, and train teams to use the tools.</p>
+            <small>Python · machine learning · process automation</small>
+          </article>
+          <article class="service">
+            <span class="num">06</span>
+            <h3>Logistics &amp; supplier terms</h3>
+            <p>Structure distribution-centre services and negotiate supplier contracts, so the network pays for itself.</p>
+            <small>DC contracts · supplier compliance · RTV</small>
+          </article>
+        </div>
+      </div>
+    </section>
 
-      <section class="block" id="experience" aria-labelledby="exp-h">
-        <div class="section-head"><h2 id="exp-h">Experience</h2></div>
-        <ol class="timeline">
-          <li class="role">
-            <div class="role-head"><h3>Supply Chain Manager</h3><span class="when">Jul 2022 – Present</span></div>
-            <div class="org">eco-shop Malaysia · Klang, Selangor</div>
+    <section class="sec alt" id="approach" aria-labelledby="approach-h">
+      <div class="wrap">
+        <div class="sec-head">
+          <span class="label">Approach</span>
+          <h2 id="approach-h">How I work</h2>
+          <p>Every recommendation is grounded in the business's own data and designed so the people running the operation can take it over.</p>
+        </div>
+        <ol class="approach">
+          <li class="step"><h3>Diagnose</h3><p>Start from the data to find where availability, inventory or cost is actually lost.</p></li>
+          <li class="step"><h3>Simplify</h3><p>Remove steps and exceptions before adding tools. Simple processes are easier to scale.</p></li>
+          <li class="step"><h3>Deliver</h3><p>Put changes in place with commercial, distribution and store teams, and measure the results.</p></li>
+          <li class="step"><h3>Build capability</h3><p>Leave behind the tools, reports and skills the team needs to keep improving.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="sec" id="about" aria-labelledby="about-h">
+      <div class="wrap about">
+        <div>
+          <span class="label">About</span>
+          <h2 id="about-h" style="margin-bottom: 24px;">Edmund Chong</h2>
+          <p class="lead">I am a supply chain practitioner. My work sits where retail operations, data and AI meet.</p>
+          <p>I am Supply Chain Manager at eco-shop Malaysia, where I work on supply chain visibility, store replenishment and same-store sales growth. Before that, I led supply chain planning at Watsons and spent six years at Tesco. There I ran ordering and promotion forecasting, and managed distribution-centre income and supplier contracts. I began my career in distribution and trucking at Keppel Logistics.</p>
+          <p>I hold a Master of Science in Supply Chain Management from the Malaysia Institute for Supply Chain Innovation (MISI), part of the MIT Global SCALE Network. I also earned a certificate in AI and machine learning with The University of Texas at Austin.</p>
+          <p class="pull">“My goal is to combine the best practices of supply chain and artificial intelligence to deliver value to the customers, the business and the environment.”</p>
+        </div>
+        <div>
+          <div class="qual">
+            <h3>At a glance</h3>
             <ul>
-              <li>Develop ways to see clearly what is happening across the supply chain</li>
-              <li>Streamline and simplify store replenishment</li>
-              <li>Grow same-store sales</li>
-              <li>Give colleagues up-to-date tools so they can work faster and more effectively</li>
-              <li>Work with stakeholders across the business</li>
+              <li><b>Based in</b><span>Kuala Lumpur, Malaysia</span></li>
+              <li><b>Sectors</b><span>Hypermarket &amp; grocery, health &amp; beauty, value retail, third-party logistics</span></li>
+              <li><b>Core skills</b><span>Inventory management, supply management, forecasting, continuous improvement, Python</span></li>
+              <li><b>Languages</b><span>English (native), Malay (professional)</span></li>
             </ul>
-          </li>
-          <li class="role">
-            <div class="role-head"><h3>Supply Chain Manager</h3><span class="when">Sep 2020 – May 2022</span></div>
-            <div class="org">Watsons Malaysia · Kuala Lumpur</div>
-            <ul>
-              <li>Made stock purchasing decisions that weighed inventory spend against expected sales</li>
-              <li>Met on-shelf availability targets and acted early on availability risks</li>
-              <li>Worked with merchandising so stock reached stores on time and was distributed where it was needed</li>
-              <li>Owned the end-to-end processes for store ordering, purchasing and promotion allocation</li>
-            </ul>
-          </li>
-          <li class="role">
-            <div class="role-head"><h3>Tesco Stores (Malaysia)</h3><span class="when">Jul 2014 – Sep 2020</span></div>
-            <div class="org">6 years 3 months · Kuala Lumpur</div>
-            <div class="sub">
-              <div>
-                <b>Supply Chain Planning Manager Lead</b><span class="when muted">Aug 2019 – Sep 2020</span>
-                <ul>
-                  <li>Led the ordering team for Grocery, Hardline and Fresh, as well as the promotion forecast team</li>
-                  <li>Optimised inventory while keeping availability high for customers</li>
-                </ul>
-              </div>
-              <div>
-                <b>Logistics Income Manager</b><span class="when muted">Jul 2017 – Jul 2019</span>
-                <ul>
-                  <li>Developed distribution-centre services and negotiated DC contract terms with suppliers</li>
-                  <li>Trained the team to use data to understand the supply chain</li>
-                </ul>
-              </div>
-              <div>
-                <b>RTV Manager</b><span class="when muted">Nov 2016 – Jun 2017</span>
-                <ul>
-                  <li>Made sure stores and the DC followed the Return-to-Vendor process, using data to monitor them</li>
-                </ul>
-              </div>
-              <div>
-                <b>Logistics Income Executive</b><span class="when muted">Jul 2014 – Oct 2016</span>
-                <ul>
-                  <li>Calculated and tracked income against costs, and negotiated DC contracts with suppliers</li>
-                </ul>
-              </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec alt" id="record" aria-labelledby="record-h">
+      <div class="wrap">
+        <div class="sec-head">
+          <span class="label">Track record</span>
+          <h2 id="record-h">Experience</h2>
+        </div>
+        <ol class="record">
+          <li>
+            <span class="when">2022 – Present</span>
+            <div>
+              <h3>Supply Chain Manager</h3>
+              <div class="org">eco-shop Malaysia</div>
+              <p>Building supply chain visibility, simplifying store replenishment, growing same-store sales, and giving colleagues better tools.</p>
             </div>
           </li>
-          <li class="role">
-            <div class="role-head"><h3>Keppel Logistics (M)</h3><span class="when">Apr 2012 – Apr 2014</span></div>
-            <div class="org">2 years 1 month · Shah Alam</div>
-            <div class="sub">
-              <div>
-                <b>Senior Officer, Distribution &amp; Trucking</b><span class="when muted">May 2013 – Apr 2014</span>
-                <ul>
-                  <li>Responsible for meeting revenue and profit budgets for distribution and trucking, and took part in contract negotiations and tenders</li>
-                </ul>
-              </div>
-              <div>
-                <b>Marketing Officer &amp; IT Assistant</b><span class="when muted">Apr 2012 – Apr 2014</span>
-                <ul>
-                  <li>Found new warehousing and trucking customers, prepared quotations, and supported the company's IT systems</li>
-                </ul>
-              </div>
+          <li>
+            <span class="when">2020 – 2022</span>
+            <div>
+              <h3>Supply Chain Manager</h3>
+              <div class="org">Watsons Malaysia</div>
+              <p>Owned stock purchasing decisions, on-shelf availability targets, and the end-to-end processes for store ordering, purchasing and promotion allocation.</p>
+            </div>
+          </li>
+          <li>
+            <span class="when">2014 – 2020</span>
+            <div>
+              <h3>Supply Chain Planning Manager Lead, and earlier roles</h3>
+              <div class="org">Tesco Stores (Malaysia)</div>
+              <p>Led the ordering teams for Grocery, Hardline and Fresh, and the promotion forecast team. Earlier roles were Logistics Income Manager, RTV Manager and Logistics Income Executive, covering DC contracts and supplier compliance.</p>
+            </div>
+          </li>
+          <li>
+            <span class="when">2012 – 2014</span>
+            <div>
+              <h3>Senior Officer, Distribution &amp; Trucking</h3>
+              <div class="org">Keppel Logistics (M)</div>
+              <p>Accountable for distribution and trucking revenue and profitability. Took part in contract negotiations and tenders, and developed new warehousing customers.</p>
             </div>
           </li>
         </ol>
-      </section>
 
-      <section class="block" id="education" aria-labelledby="edu-h">
-        <div class="section-head"><h2 id="edu-h">Education &amp; skills</h2></div>
-        <div class="grid-2">
-          <div class="card">
+        <div class="quals">
+          <div class="qual">
             <h3>Education</h3>
-            <ul class="edu">
-              <li><b>M.Sc., Supply Chain Management</b><span>Malaysia Institute for Supply Chain Innovation (MISI) · 2017 – 2021</span></li>
-              <li><b>Certificate, Artificial Intelligence &amp; Machine Learning</b><span>Great Learning with The University of Texas at Austin · 2020 – 2021</span></li>
-              <li><b>Bachelor's, Business, Management &amp; Marketing</b><span>University of South Australia · 2008 – 2011</span></li>
+            <ul>
+              <li><b>M.Sc., Supply Chain Management</b><span>Malaysia Institute for Supply Chain Innovation (MISI), MIT Global SCALE Network</span></li>
+              <li><b>Certificate, Artificial Intelligence &amp; Machine Learning</b><span>Great Learning with The University of Texas at Austin</span></li>
+              <li><b>Bachelor's, Business, Management &amp; Marketing</b><span>University of South Australia</span></li>
             </ul>
           </div>
-          <div>
-            <div class="card">
-              <h3>Certifications</h3>
-              <ul class="edu">
-                <li><span>IIT Kanpur Certificate Program: Python for AI, Machine Learning &amp; Deep Learning</span></li>
-                <li><span>TensorFlow 2.0: Deep Learning and Artificial Intelligence</span></li>
-                <li><span>Python for Finance: Investment Fundamentals and Data Analytics</span></li>
-              </ul>
-            </div>
-            <div class="card">
-              <h3>Skills &amp; languages</h3>
-              <ul class="tags" aria-label="Skills">
-                <li>Inventory Management</li>
-                <li>Supply Management</li>
-                <li>Demand &amp; Promotion Forecasting</li>
-                <li>Continuous Improvement</li>
-                <li>Python</li>
-                <li>AI / Machine Learning</li>
-                <li>Contract Negotiation</li>
-              </ul>
-              <p class="gap muted">English (native) · Malay (professional)</p>
-            </div>
+          <div class="qual">
+            <h3>Certifications</h3>
+            <ul>
+              <li><b>Python for AI, Machine Learning &amp; Deep Learning</b><span>IIT Kanpur Certificate Program</span></li>
+              <li><b>TensorFlow 2.0: Deep Learning and AI</b><span>Professional certificate</span></li>
+              <li><b>Python for Finance: Investment Fundamentals &amp; Data Analytics</b><span>Professional certificate</span></li>
+            </ul>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
+  </main>
 
-      <section class="contact" id="contact" aria-labelledby="contact-h">
-        <h2 id="contact-h">Let's talk supply chain</h2>
-        <p>I'm happy to hear about supply chain problems, analytics and AI projects, or anything else in retail operations.</p>
+  <section class="contact" id="contact" aria-labelledby="contact-h">
+    <div class="wrap grid">
+      <div>
+        <span class="label">Contact</span>
+        <h2 id="contact-h">Let's discuss your supply chain.</h2>
+        <p>Whether you want a second opinion on inventory and replenishment, help with a data or AI initiative, or simply to compare notes, I'd be glad to hear from you.</p>
         <div class="actions">
-          <a class="btn" href="mailto:edmundcyh@gmail.com">edmundcyh@gmail.com</a>
-          <a class="btn ghost" href="https://www.linkedin.com/in/edmundcyh/" rel="noopener">LinkedIn</a>
+          <a class="btn btn-brass" href="mailto:edmundcyh@gmail.com?subject=Supply%20chain%20enquiry">Start a conversation</a>
         </div>
-      </section>
-    </main>
+      </div>
+      <dl>
+        <div><dt>Email</dt><dd><a href="mailto:edmundcyh@gmail.com">edmundcyh@gmail.com</a></dd></div>
+        <div><dt>LinkedIn</dt><dd><a href="https://www.linkedin.com/in/edmundcyh/" rel="noopener">linkedin.com/in/edmundcyh</a></dd></div>
+        <div><dt>Location</dt><dd>Kuala Lumpur, Malaysia</dd></div>
+      </dl>
+    </div>
+  </section>
 
-    <footer class="site">
+  <footer class="site">
+    <div class="wrap">
       <span>&copy; <span id="year">2026</span> Edmund Chong</span>
-      <span>Kuala Lumpur, Malaysia</span>
-    </footer>
-  </div>
+      <span>Supply Chain &amp; AI · Kuala Lumpur</span>
+    </div>
+  </footer>
   <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
 </body>
 </html>
