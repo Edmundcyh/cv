@@ -2,7 +2,7 @@
 
 Personal landing page for Edmund Chong, served by **GitHub Pages** at <https://www.edmundcyh.com> with DNS on **Cloudflare (free plan)**.
 
-It is a single static page with no build step:
+It is a single static page. A GitHub Actions workflow adds the latest supply chain headlines to it every morning and publishes it:
 
 | File | Purpose |
 | --- | --- |
@@ -10,15 +10,47 @@ It is a single static page with no build step:
 | `404.html` | Page shown by GitHub Pages for unknown URLs |
 | `favicon.svg` | Browser tab icon |
 | `images/edmundchong.jpg` | Profile photo, also used for link previews |
-| `CNAME` | Tells GitHub Pages which custom domain to serve (`www.edmundcyh.com`) |
+| `CNAME` | Records the custom domain (`www.edmundcyh.com`); with Actions deploys, the Pages setting below is what counts |
+| `news/build.py` | Fetches the news feeds and fills in the news section of the page |
+| `news/picks.json` | Your weekly picks, shown above the headlines |
+| `.github/workflows/deploy.yml` | Builds and publishes the site on every push to `main` and daily at 06:17 Kuala Lumpur time |
 
-To edit the site, change `index.html` and push to `main`. GitHub Pages redeploys within a minute or two.
+To edit the site, change `index.html` and push to `main`. The workflow redeploys within a minute or two.
+
+## News section
+
+The **News** section has two parts:
+
+- **Headlines** refresh automatically every morning from the feeds listed in `FEEDS` at the top of `news/build.py`: Google News (supply chain news mentioning Malaysia or ASEAN), Supply Chain Dive, The Loadstar, FreightWaves and Splash247. The newest 9 headlines from the last 14 days are shown, with at most 2–3 from any one source. Only the headline, source, date and link are shown, never the article text. If a feed fails it is skipped; if they all fail, the page shows plain links to the publishers instead.
+- **My picks** are the stories you choose, with your own comment. This is the part that gives people a reason to come back. To update it, edit `news/picks.json` (on github.com: open the file and click the pencil icon) and commit to `main`:
+
+  ```json
+  {
+    "week_of": "2026-09-22",
+    "picks": [
+      {
+        "title": "Headline of the article",
+        "url": "https://www.example.com/article",
+        "source": "The Loadstar",
+        "note": "One or two lines on why it matters for retailers in Malaysia."
+      }
+    ]
+  }
+  ```
+
+  `source` and `note` are optional. The picks box is hidden while `picks` is empty, and is hidden automatically once `week_of` is more than 30 days old, so an old week never shows as current.
+
+To refresh the headlines immediately, go to **Actions → Deploy site → Run workflow**.
+
+To preview the built page locally, run `python3 news/build.py index.html _site/index.html` and open `_site/index.html` (copy `images/` and `favicon.svg` into `_site/` for the photo and icon).
+
+**Keep the daily refresh running:** GitHub pauses scheduled workflows in public repos after 60 days without a commit. Updating `news/picks.json` counts. If it does get paused, GitHub emails you, and you can turn it back on under **Actions → Deploy site → Enable workflow**.
 
 ## Hosting setup
 
 ### GitHub (repo → Settings → Pages)
 
-- **Source:** Deploy from a branch → `main` / `(root)`
+- **Source:** GitHub Actions (the `Deploy site` workflow builds and publishes the page)
 - **Custom domain:** `www.edmundcyh.com`
 - **Enforce HTTPS:** on (it becomes available after GitHub issues the certificate)
 
