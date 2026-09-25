@@ -207,6 +207,29 @@
     .qual li b { display: block; color: var(--ink); font-weight: 600; }
     .qual li span { color: var(--muted); font-size: .9rem; }
 
+    /* News */
+    .picks { background: var(--surface); border: 1px solid var(--line); border-left: 3px solid var(--brass); padding: 28px; margin-bottom: 40px; }
+    .picks h3 { font-size: 1.25rem; margin-bottom: 18px; }
+    .picks h3 span { display: block; font-family: var(--sans); font-size: .82rem; font-weight: 500; color: var(--muted); margin-top: 4px; letter-spacing: 0; }
+    .picks li { padding: 16px 0; border-top: 1px solid var(--line); }
+    .picks li:first-child { border-top: 0; padding-top: 0; }
+    .picks li:last-child { padding-bottom: 0; }
+    .picks a { font-family: var(--serif); font-size: 1.1rem; font-weight: 600; color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--brass); }
+    .picks a:hover { color: var(--brass); }
+    .picks p { font-size: .96rem; margin: 8px 0 0; }
+    .news .meta { display: block; font-size: .74rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--brass); margin-bottom: 6px; }
+    /* Borders on the cards, not a coloured gap, so a short last row leaves no filled block. */
+    .headlines { display: grid; border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+    .headlines li { border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    @media (min-width: 700px) { .headlines { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 1000px) { .headlines { grid-template-columns: repeat(3, 1fr); } }
+    .headlines a { display: block; height: 100%; background: var(--surface); padding: 22px 24px 26px; text-decoration: none; }
+    .headlines .title { font-family: var(--serif); font-size: 1.08rem; font-weight: 600; line-height: 1.35; color: var(--ink); }
+    .headlines a:hover .title { color: var(--brass); }
+    .news-note { font-size: .84rem; color: var(--muted); margin: 16px 0 0; }
+    .news-fallback a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--brass); }
+    .news-fallback a:hover { color: var(--brass); }
+
     /* Contact */
     .contact { background: var(--navy); color: var(--on-navy); padding: 88px 0; }
     .contact .grid { display: grid; gap: 40px; align-items: end; }
@@ -237,6 +260,7 @@
           <li><a href="#approach">Approach</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#record">Track record</a></li>
+          <li><a href="#news">News</a></li>
           <li><a class="btn btn-brass" href="https://www.linkedin.com/in/edmundcyh/" target="_blank" rel="noopener">Get in touch</a></li>
         </ul>
       </nav>
@@ -432,6 +456,20 @@
             </ul>
           </div>
         </div>
+      </div>
+    </section>
+
+    <section class="sec news" id="news" aria-labelledby="news-h">
+      <div class="wrap">
+        <div class="sec-head">
+          <span class="label">Supply chain news</span>
+          <h2 id="news-h">What's moving in supply chains</h2>
+          <p>Headlines from trade publications, refreshed every morning, including news from Malaysia and Southeast Asia.</p>
+        </div>
+        <!-- picks:start --><!-- picks:end -->
+        <!-- news:start -->
+        <p class="news-fallback">Read the latest from <a href="https://www.supplychaindive.com/" target="_blank" rel="noopener">Supply Chain Dive</a>, <a href="https://theloadstar.com/" target="_blank" rel="noopener">The Loadstar</a>, <a href="https://www.freightwaves.com/" target="_blank" rel="noopener">FreightWaves</a> and <a href="https://splash247.com/" target="_blank" rel="noopener">Splash247</a>.</p>
+        <!-- news:end -->
       </div>
     </section>
   </main>
