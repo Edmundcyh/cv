@@ -51,7 +51,7 @@ XML_BASE = "{http://www.w3.org/XML/1998/namespace}base"
 def fetch(url):
     req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT, "Accept": "application/rss+xml, application/atom+xml, application/xml, text/xml"})
     with urllib.request.urlopen(req, timeout=20) as resp:
-        return resp.read()
+        return resp.read(), resp.url  # after redirects, relative links resolve against the final URL
 
 
 def clean_text(value):
@@ -90,14 +90,18 @@ def atom_link(root, entry, feed_url):
     Relative links are resolved against any xml:base, then the feed's own URL.
     """
     links = entry.findall(ATOM + "link")
-    for link in [l for l in links if l.get("rel") == "alternate"] + [l for l in links if l.get("rel") is None]:
+    explicit = [l for l in links if l.get("rel") in ("alternate", "http://www.iana.org/assignments/relation/alternate")]
+    for link in explicit + [l for l in links if l.get("rel") is None]:
         href = (link.get("href") or "").strip()
         if not href:
             continue
-        try:
-            base = feed_url
-            for el in (root, entry, link):
+        base = feed_url
+        for el in (root, entry, link):
+            try:
                 base = urljoin(base, el.get(XML_BASE, ""))
+            except ValueError:  # a malformed xml:base is ignored, so absolute links still work
+                pass
+        try:
             url = safe_url(urljoin(base, href))
         except ValueError:  # malformed URL, e.g. an unclosed IPv6 bracket
             continue
@@ -139,7 +143,8 @@ def collect_headlines(now):
     headlines, seen = [], set()
     for feed in FEEDS:
         try:
-            items = parse_feed(fetch(feed["url"]), feed)
+            data, final_url = fetch(feed["url"])
+            items = parse_feed(data, {**feed, "url": final_url})
         except Exception as exc:  # network error, HTTP error, bad XML
             print(f"skip {feed['name']}: {exc}", file=sys.stderr)
             continue
