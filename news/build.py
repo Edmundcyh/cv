@@ -82,12 +82,27 @@ def safe_url(value):
     return value if re.match(r"https?://", value, re.I) else None
 
 
-def atom_link(root, entry, feed_url):
+def resolve_base(el, parents, url):
+    """url resolved through the xml:base of el and each of its ancestors, outermost first."""
+    chain = []
+    while el is not None:
+        chain.append(el)
+        el = parents.get(el)
+    for el in reversed(chain):
+        try:
+            url = urljoin(url, el.get(XML_BASE, ""))
+        except ValueError:  # a malformed xml:base is ignored, so absolute links still work
+            pass
+    return url
+
+
+def atom_link(entry, parents, feed_url):
     """The article URL of an Atom entry, or None.
 
     Links marked rel="alternate" are tried first, then links with no rel, which
     also mean alternate; "self", "edit", "enclosure" and the like are skipped.
     Relative links are resolved against any xml:base, then the feed's own URL.
+    parents maps each element of the document to its parent.
     """
     links = entry.findall(ATOM + "link")
     explicit = [l for l in links if l.get("rel") in ("alternate", "http://www.iana.org/assignments/relation/alternate")]
@@ -95,14 +110,8 @@ def atom_link(root, entry, feed_url):
         href = (link.get("href") or "").strip()
         if not href:
             continue
-        base = feed_url
-        for el in (root, entry, link):
-            try:
-                base = urljoin(base, el.get(XML_BASE, ""))
-            except ValueError:  # a malformed xml:base is ignored, so absolute links still work
-                pass
         try:
-            url = safe_url(urljoin(base, href))
+            url = safe_url(urljoin(resolve_base(link, parents, feed_url), href))
         except ValueError:  # malformed URL, e.g. an unclosed IPv6 bracket
             continue
         if url:
@@ -129,10 +138,11 @@ def parse_feed(data, feed):
             "date": parse_date(item.findtext("pubDate")),
             "source": source,
         })
+    parents = {child: parent for parent in root.iter() for child in parent}
     for entry in root.iter(ATOM + "entry"):  # Atom
         items.append({
             "title": clean_text(entry.findtext(ATOM + "title")),
-            "url": atom_link(root, entry, feed["url"]),
+            "url": atom_link(entry, parents, feed["url"]),
             "date": parse_date(entry.findtext(ATOM + "published") or entry.findtext(ATOM + "updated")),
             "source": feed["name"],
         })
