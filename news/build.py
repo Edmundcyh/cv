@@ -37,6 +37,7 @@ FEEDS = [
 
 MAX_HEADLINES = 9          # fills a 3 x 3 grid on desktop
 MAX_AGE = timedelta(days=14)
+MAX_AHEAD = timedelta(hours=1)  # allows for a publisher's clock running fast; later dates are bad data
 PICKS_MAX_AGE = timedelta(days=30)  # older picks are hidden rather than shown as "this week"
 PICKS_FILE = Path(__file__).with_name("picks.json")
 MYT = timezone(timedelta(hours=8))
@@ -99,9 +100,9 @@ def parse_feed(data, feed):
             "source": source,
         })
     for entry in root.iter(ATOM + "entry"):  # Atom
-        link = entry.find(ATOM + "link[@rel='alternate']")
-        if link is None:
-            link = entry.find(ATOM + "link")
+        # A link with no rel is the article itself; skip "self", "edit", "enclosure" and the like.
+        links = entry.findall(ATOM + "link")
+        link = next((l for l in links if l.get("rel", "alternate") == "alternate"), None)
         items.append({
             "title": clean_text(entry.findtext(ATOM + "title")),
             "url": safe_url(link.get("href") if link is not None else None),
@@ -119,7 +120,8 @@ def collect_headlines(now):
         except Exception as exc:  # network error, HTTP error, bad XML
             print(f"skip {feed['name']}: {exc}", file=sys.stderr)
             continue
-        fresh = [i for i in items if i["title"] and i["url"] and i["date"] and now - i["date"] <= MAX_AGE]
+        # Future dates would sort to the top and stay there; far-future ones crash the rendering.
+        fresh = [i for i in items if i["title"] and i["url"] and i["date"] and now - MAX_AGE <= i["date"] <= now + MAX_AHEAD]
         fresh.sort(key=lambda i: i["date"], reverse=True)
         taken = 0
         for item in fresh:
