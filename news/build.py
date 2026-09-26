@@ -20,6 +20,7 @@ import xml.etree.ElementTree as ET
 from datetime import datetime, timedelta, timezone
 from email.utils import parsedate_to_datetime
 from pathlib import Path
+from urllib.parse import urljoin
 
 # To change the sources, edit this list. "limit" caps how many headlines
 # one source can contribute, so a busy feed doesn't crowd out the rest.
@@ -44,6 +45,7 @@ MYT = timezone(timedelta(hours=8))
 USER_AGENT = "Mozilla/5.0 (compatible; edmundcyh.com news builder; +https://www.edmundcyh.com/)"
 
 ATOM = "{http://www.w3.org/2005/Atom}"
+XML_BASE = "{http://www.w3.org/XML/1998/namespace}base"
 
 
 def fetch(url):
@@ -80,6 +82,30 @@ def safe_url(value):
     return value if re.match(r"https?://", value, re.I) else None
 
 
+def atom_link(root, entry, feed_url):
+    """The article URL of an Atom entry, or None.
+
+    Links marked rel="alternate" are tried first, then links with no rel, which
+    also mean alternate; "self", "edit", "enclosure" and the like are skipped.
+    Relative links are resolved against any xml:base, then the feed's own URL.
+    """
+    links = entry.findall(ATOM + "link")
+    for link in [l for l in links if l.get("rel") == "alternate"] + [l for l in links if l.get("rel") is None]:
+        href = (link.get("href") or "").strip()
+        if not href:
+            continue
+        try:
+            base = feed_url
+            for el in (root, entry, link):
+                base = urljoin(base, el.get(XML_BASE, ""))
+            url = safe_url(urljoin(base, href))
+        except ValueError:  # malformed URL, e.g. an unclosed IPv6 bracket
+            continue
+        if url:
+            return url
+    return None
+
+
 def parse_feed(data, feed):
     root = ET.fromstring(data)
     items = []
@@ -100,12 +126,9 @@ def parse_feed(data, feed):
             "source": source,
         })
     for entry in root.iter(ATOM + "entry"):  # Atom
-        # A link with no rel is the article itself; skip "self", "edit", "enclosure" and the like.
-        links = entry.findall(ATOM + "link")
-        link = next((l for l in links if l.get("rel", "alternate") == "alternate"), None)
         items.append({
             "title": clean_text(entry.findtext(ATOM + "title")),
-            "url": safe_url(link.get("href") if link is not None else None),
+            "url": atom_link(root, entry, feed["url"]),
             "date": parse_date(entry.findtext(ATOM + "published") or entry.findtext(ATOM + "updated")),
             "source": feed["name"],
         })
