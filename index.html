@@ -86,7 +86,7 @@
     }
 
     *, *::before, *::after { box-sizing: border-box; }
-    html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; scroll-padding-top: 84px; }
+    html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; scroll-padding-top: calc(var(--masthead-h, 72px) + 12px); }
     body { margin: 0; background: var(--bg); color: var(--body); font: 400 17px/1.7 var(--sans); -webkit-font-smoothing: antialiased; }
     a { color: inherit; }
     :focus-visible { outline: 2px solid var(--brass); outline-offset: 3px; }
@@ -109,6 +109,7 @@
     /* Header + hero (navy band) */
     .top { background: var(--navy); color: var(--on-navy); }
     .masthead { position: sticky; top: 0; z-index: 50; background: var(--navy); border-bottom: 1px solid rgba(255, 255, 255, .08); transition: box-shadow .2s ease; }
+    .masthead.unpinned { position: relative; }
     .masthead.scrolled { box-shadow: 0 6px 20px rgba(5, 10, 18, .28); }
     .nav { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 14px 0; }
     .brand { text-decoration: none; line-height: 1.2; }
@@ -249,7 +250,7 @@
     footer.site { background: var(--navy); color: var(--on-navy-muted); font-size: .84rem; }
     footer.site .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; padding-top: 24px; padding-bottom: 32px; border-top: 1px solid rgba(255, 255, 255, .08); }
 
-    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .btn { transition: none; } }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .btn, .masthead { transition: none; } }
   </style>
 </head>
 <body>
@@ -510,6 +511,17 @@
       function update() { bar.classList.toggle("scrolled", window.scrollY > 8); }
       window.addEventListener("scroll", update, { passive: true });
       update();
+      // Keep anchor targets clear of the bar at whatever height it renders
+      // (e.g. when the visitor enlarges text), and stop pinning it once it
+      // would take up more than a third of the screen.
+      function setHeight() {
+        var h = bar.offsetHeight, unpin = h > window.innerHeight / 3;
+        bar.classList.toggle("unpinned", unpin);
+        document.documentElement.style.setProperty("--masthead-h", (unpin ? 0 : h) + "px");
+      }
+      if ("ResizeObserver" in window) new ResizeObserver(setHeight).observe(bar);
+      window.addEventListener("resize", setHeight);
+      setHeight();
     })();
   </script>
 </body>
