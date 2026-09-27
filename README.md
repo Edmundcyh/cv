@@ -48,6 +48,8 @@ To preview the built page locally, run `python3 news/build.py index.html _site/i
 
 ## Hosting setup
 
+> **Keep this repository public.** On GitHub's free plan, making the repository private switches off GitHub Pages, and www.edmundcyh.com goes down. The daily deploy then fails with "Get Pages site failed … Not Found". To recover, make the repository public (Settings → General → Danger Zone → Change visibility). Then set up the Pages settings below again, including re-entering the custom domain. Finally, go to **Actions**, click **Deploy site** in the list on the left, and use **Run workflow**.
+
 ### GitHub (repo → Settings → Pages)
 
 - **Source:** GitHub Actions (the `Deploy site` workflow builds and publishes the page)
