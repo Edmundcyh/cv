@@ -73,3 +73,4 @@ GitHub redirects the apex (`edmundcyh.com`) to `www.edmundcyh.com` automatically
 - **SSL/TLS → Overview → Encryption mode: Full (strict).** Do not use *Flexible*, because it causes an infinite redirect loop with GitHub's HTTPS enforcement.
 - **SSL/TLS → Edge Certificates:** turn on *Always Use HTTPS*.
 - **Caching:** the defaults are fine. After an update, *Caching → Purge Everything* makes the change appear immediately.
+- **Web Analytics → Add a site → `www.edmundcyh.com`:** visitor counts, top pages, referrers and countries, with no cookies, so no consent banner is needed. It uses *automatic setup*: Cloudflare adds its script to each page as it serves it, so nothing in this repo needs to change. This only works while the `www` record is **Proxied**; if it is ever set to DNS only, switch the site to the JS snippet under *Manage site* and paste the snippet into `index.html` and `404.html`.
