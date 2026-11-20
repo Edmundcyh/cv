@@ -21,8 +21,11 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  # Building and publishing are separate jobs, so a failed publish can be
-  # re-run on its own without uploading a second copy of the site.
+  # Building and publishing are separate jobs. If only the publish fails,
+  # "Re-run failed jobs" publishes the same build without uploading it again.
+  # The uploaded site expires after a day, so after that use "Run workflow".
+  # Avoid "Re-run all jobs": it uploads a second copy and the publish then
+  # stops with "Multiple artifacts".
   build:
     runs-on: ubuntu-latest
     steps:

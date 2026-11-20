@@ -13,7 +13,7 @@ It is a single static page. A GitHub Actions workflow adds the latest supply cha
 | `CNAME` | Records the custom domain (`www.edmundcyh.com`); with Actions deploys, the Pages setting below is what counts |
 | `news/build.py` | Fetches the news feeds and fills in the news section of the page |
 | `news/picks.json` | Your weekly picks, shown above the headlines |
-| `.github/workflows/deploy.yml` | Builds and publishes the site on every push to `main` and daily at 06:17 Kuala Lumpur time |
+| `.github/workflows/deploy.yml` | Builds and publishes the site on every push to `main` and once a day (scheduled for 06:17 Kuala Lumpur time; GitHub usually starts it a few hours late) |
 
 To edit the site, change `index.html` and push to `main`. The workflow redeploys within a minute or two.
 
@@ -41,6 +41,8 @@ The **News** section has two parts:
   `source` and `note` are optional. The picks box is hidden while `picks` is empty, and is hidden automatically once `week_of` is more than 30 days old, so an old week never shows as current.
 
 To refresh the headlines immediately, go to **Actions → Deploy site → Run workflow**.
+
+If a run fails, the publish step has already been retried once. Open the failed run and use **Re-run failed jobs** on the same day; after that, use **Run workflow** instead. Avoid **Re-run all jobs**, which uploads a second copy of the site and makes the publish fail.
 
 To preview the built page locally, run `python3 news/build.py index.html _site/index.html` and open `_site/index.html` (copy `images/` and `favicon.svg` into `_site/` for the photo and icon).
 
